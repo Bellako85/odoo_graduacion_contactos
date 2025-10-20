@@ -1,0 +1,77 @@
+/* Estilos específicos para graduación de lentes */
+.graduacion-field {
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 8px 12px;
+    background-color: #ffffff;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.graduacion-field:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+    outline: none;
+}
+
+#graduacion_lentes .card {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+#graduacion_lentes .card-header {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.text-purple {
+    color: #7c3aed !important;
+}
+
+/* Estilo para sección deshabilitada visualmente */
+#seccion_oi {
+    transition: all 0.3s ease;
+}
+
+#seccion_oi[style*="opacity: 0.6"] {
+    background-color: #f9fafb;
+}
+
+/* Mejoras para selects */
+.form-select-sm {
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+/* Botón GUARDAR Y CONTINUAR */
+.btn-lg {
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+/* Campos de solo lectura */
+.form-control-plaintext.bg-light {
+    background-color: #f8f9fa !important;
+    color: #374151;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #graduacion_lentes .card-body {
+        padding: 1rem !important;
+    }
+    
+    .row.g-2 > [class*="col-"] {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Estilos para etiquetas */
+.form-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    display: block;
+}
