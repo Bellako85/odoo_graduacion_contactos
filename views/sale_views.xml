@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Vista extendida para líneas de orden -->
+    <record id="view_order_line_form_graduacion" model="ir.ui.view">
+        <field name="name">sale.order.line.form.graduacion</field>
+        <field name="model">sale.order.line</field>
+        <field name="inherit_id" ref="sale.view_order_line_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_uom_qty']" position="after">
+                <group string="Graduación Lentes de Contacto" 
+                       attrs="{'invisible': [('product_id.es_lente_contacto', '=', False)]}">
+                    <field name="misma_graduacion"/>
+                    <group>
+                        <group string="Ojo Derecho (OD)">
+                            <field name="od_esfera"/>
+                            <field name="od_cilindro"/>
+                            <field name="od_eje"/>
+                        </group>
+                        <group string="Ojo Izquierdo (OI)">
+                            <field name="oi_esfera"/>
+                            <field name="oi_cilindro"/>
+                            <field name="oi_eje"/>
+                        </group>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
