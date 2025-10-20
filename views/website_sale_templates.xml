@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="graduacion_lentes_contacto" name="Graduación Lentes Contacto">
+        <div id="graduacion_lentes" class="container mt-4" style="display: none;">
+            <div class="card shadow-sm border-0">
+                <!-- Header estilo BAUSCH + LOMB -->
+                <div class="card-header bg-light py-3 border-bottom">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h5 class="mb-0 text-dark font-weight-bold">BAUSCH + LOMB</h5>
+                            <small class="text-muted">ULTRA® contact lenses with MoistureSeal™ technology</small>
+                        </div>
+                        <div class="col-auto">
+                            <small class="text-muted">For Assignment - Directed Script</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-body p-4">
+                    <!-- Checkbox para misma graduación -->
+                    <div class="alert alert-light border mb-4">
+                        <div class="form-check mb-0">
+                            <input class="form-check-input" type="checkbox" id="misma_graduacion" checked>
+                            <label class="form-check-label small" for="misma_graduacion">
+                                <strong>✓ Selecciona la casilla si tienes la misma graduación en ambos ojos (quieres una sola graduación)</strong>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Ojo Derecho -->
+                        <div class="col-md-6 mb-3">
+                            <div class="border rounded p-3 h-100">
+                                <h6 class="text-primary mb-3 border-bottom pb-2">
+                                    <strong>OD (Ojo Derecho)</strong>
+                                </h6>
+                                
+                                <div class="row g-2">
+                                    <div class="col-6">
+                                        <label class="form-label small fw-bold text-muted">SPH (ESFERA)</label>
+                                        <select class="form-select form-select-sm graduacion-field od-esfera" name="od_esfera">
+                                            <option value="">Elegir</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-6">
+                                        <label class="form-label small fw-bold text-muted">CYL (CILINDRO)</label>
+                                        <select class="form-select form-select-sm graduacion-field od-cilindro" name="od_cilindro">
+                                            <option value="">Elegir</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-6">
+                                        <label class="form-label small fw-bold text-muted">AXIS (EJE)</label>
+                                        <select class="form-select form-select-sm graduacion-field od-eje" name="od_eje">
+                                            <option value="">Elegir</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-6">
+                                        <label class="form-label small fw-bold text-muted">CURVA BASE</label>
+                                        <div class="form-control-plaintext bg-light rounded px-2 py-1 small">
+                                            <span t-field="product.curva_base"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-2 mt-2">
+                                    <div class="col-6">
+                                        <label class="form-label small fw-bold text-muted">DIÁMETRO</label>
+                                        <div class="form-control-plaintext bg-light rounded px-2 py-1 small">
+                                            <span t-field="product.diametro"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label small fw-bold text-muted">CANTIDAD</label>
+                                        <input type="number" class="form-control form-control-sm" name="cantidad_od" value="1" min="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ojo Izquierdo -->
+                        <div class="col-md-6 mb-3">
+                            <div class="border rounded p-3 h-100" id="seccion_oi">
+                                <h6 class="text-purple mb-3 border-bottom pb-2">
+                                    <strong>OS (Ojo Izquierdo)</strong>
+                                </h6>
+                                
+                                <div class="row g-2">
+                                    <div class="col-6">
+                                        <label class="form-label small fw-bold text-muted">SPH (ESFERA)</label>
+                                        <select class="form-select form-select-sm graduacion-field oi-esfera" name="oi_esfera">
+                                            <option value="">Elegir</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-6">
+                                        <label class="form-label small fw-bold text-muted">CYL (CILINDRO)</label>
+                                        <select class="form-select form-select-sm graduacion-field oi-cilindro" name="oi_cilindro">
+                                            <option value="">Elegir</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-6">
+                                        <label class="form-label small fw-bold text-muted">AXIS (EJE)</label>
+                                        <select class="form-select form-select-sm graduacion-field oi-eje" name="oi_eje">
+                                            <option value="">Elegir</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-6">
+                                        <label class="form-label small fw-bold text-muted">CURVA BASE</label>
+                                        <div class="form-control-plaintext bg-light rounded px-2 py-1 small">
+                                            <span t-field="product.curva_base"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row g-2 mt-2">
+                                    <div class="col-6">
+                                        <label class="form-label small fw-bold text-muted">DIÁMETRO</label>
+                                        <div class="form-control-plaintext bg-light rounded px-2 py-1 small">
+                                            <span t-field="product.diametro"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label small fw-bold text-muted">CANTIDAD</label>
+                                        <input type="number" class="form-control form-control-sm" name="cantidad_oi" value="1" min="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resumen de precio -->
+                    <div class="alert alert-light border mt-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold h5 mb-0">Total: $<span id="total_precio" t-field="product.list_price"/></span>
+                            <button type="button" class="btn btn-primary btn-lg" onclick="addToCartWithGraduation()">
+                                GUARDAR Y CONTINUAR
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- JavaScript Mejorado -->
+    <template id="graduacion_js">
+        <script>
+            function initGraduacionSystem() {
+                const graduacionSection = document.getElementById('graduacion_lentes');
+                const mismaGraduacionCheckbox = document.getElementById('misma_graduacion');
+                const seccionOI = document.getElementById('seccion_oi');
+                
+                // Mostrar/ocultar sección basado en el producto
+                function toggleGraduacionSection() {
+                    const productEsLenteContacto = document.body.getAttribute('data-product-es-lente-contacto');
+                    if (productEsLenteContacto === 'True') {
+                        graduacionSection.style.display = 'block';
+                        initializeGraduationFields();
+                    }
+                }
+                
+                // Inicializar campos de graduación
+                function initializeGraduationFields() {
+                    loadGraduationOptions();
+                    setupSameGraduation();
+                    toggleAstigmatismFields();
+                }
+                
+                // Cargar opciones dinámicamente
+                function loadGraduationOptions() {
+                    const esferas = getGraduationValues('esferas');
+                    const cilindros = getGraduationValues('cilindros');
+                    const ejes = getGraduationValues('ejes');
+                    
+                    fillSelectOptions('.od-esfera, .oi-esfera', esferas);
+                    fillSelectOptions('.od-cilindro, .oi-cilindro', cilindros);
+                    fillSelectOptions('.od-eje, .oi-eje', ejes);
+                }
+                
+                function getGraduationValues(type) {
+                    // Estos valores vendrían de los atributos del producto
+                    const values = {
+                        esferas: ['-1.50', '-1.75', '-2.00', '-2.25', '-2.50', '-2.75', '-3.00', '-3.25', '-3.50', '-3.75', '-4.00', '-4.25', '-4.50', '-4.75', '-5.00', '-5.25', '-5.50', '-5.75', '-6.00', '-6.25', '-6.50', '-7.00', '-8.00', '-9.00', '-10.00', '+0.50', '+0.75', '+1.00', '+1.25', '+1.50', '+1.75', '+2.00', '+2.25', '+2.50', '+2.75', '+3.00'],
+                        cilindros: ['-0.75', '-1.25', '-1.75', '-2.25'],
+                        ejes: Array.from({length: 36}, (_, i) => (i * 5).toString())
+                    };
+                    return values[type] || [];
+                }
+                
+                function fillSelectOptions(selector, options) {
+                    document.querySelectorAll(selector).forEach(select => {
+                        // Mantener solo la opción por defecto
+                        while (select.options.length > 1) select.remove(1);
+                        
+                        options.forEach(option => {
+                            select.add(new Option(option, option));
+                        });
+                    });
+                }
+                
+                // Configurar misma graduación
+                function setupSameGraduation() {
+                    mismaGraduacionCheckbox.addEventListener('change', function() {
+                        seccionOI.style.opacity = this.checked ? '0.6' : '1';
+                        if (this.checked) syncFields();
+                    });
+                    
+                    // Sincronizar en tiempo real
+                    document.querySelectorAll('.od-esfera, .od-cilindro, .od-eje').forEach(field => {
+                        field.addEventListener('change', function() {
+                            if (mismaGraduacionCheckbox.checked) syncFields();
+                        });
+                    });
+                }
+                
+                function syncFields() {
+                    const fields = ['esfera', 'cilindro', 'eje'];
+                    fields.forEach(field => {
+                        const odValue = document.querySelector(`.od-${field}`).value;
+                        document.querySelector(`.oi-${field}`).value = odValue;
+                    });
+                }
+                
+                // Mostrar/ocultar campos de astigmatismo
+                function toggleAstigmatismFields() {
+                    const esTorico = document.body.getAttribute('data-product-es-torico') === 'True';
+                    document.querySelectorAll('.od-cilindro, .oi-cilindro, .od-eje, .oi-eje').forEach(field => {
+                        field.closest('.col-6').style.display = esTorico ? 'block' : 'none';
+                    });
+                }
+                
+                // Función para añadir al carrito con validación
+                window.addToCartWithGraduation = function() {
+                    if (!validateGraduation()) {
+                        showNotification('Por favor completa todos los campos de graduación requeridos.', 'error');
+                        return;
+                    }
+                    
+                    addGraduationToForm();
+                    document.querySelector('form[action="/shop/cart/update"]').submit();
+                }
+                
+                function validateGraduation() {
+                    const odEsfera = document.querySelector('.od-esfera').value;
+                    const oiEsfera = document.querySelector('.oi-esfera').value;
+                    
+                    if (!odEsfera || !oiEsfera) return false;
+                    
+                    // Validar astigmatismo si es necesario
+                    const esTorico = document.body.getAttribute('data-product-es-torico') === 'True';
+                    if (esTorico) {
+                        const odCilindro = document.querySelector('.od-cilindro').value;
+                        const odEje = document.querySelector('.od-eje').value;
+                        if (!odCilindro || !odEje) return false;
+                    }
+                    
+                    return true;
+                }
+                
+                function addGraduationToForm() {
+                    const form = document.querySelector('form[action="/shop/cart/update"]');
+                    const fields = [
+                        'misma_graduacion', 'od_esfera', 'od_cilindro', 'od_eje',
+                        'oi_esfera', 'oi_cilindro', 'oi_eje', 'cantidad_od', 'cantidad_oi'
+                    ];
+                    
+                    fields.forEach(field => {
+                        let input = document.querySelector(`[name="${field}"]`);
+                        if (!input) {
+                            input = document.createElement('input');
+                            input.type = 'hidden';
+                            input.name = field;
+                            form.appendChild(input);
+                        }
+                        
+                        if (field === 'misma_graduacion') {
+                            input.value = mismaGraduacionCheckbox.checked ? 'true' : 'false';
+                        }
+                    });
+                }
+                
+                function showNotification(message, type) {
+                    // Implementar notificación bonita
+                    alert(message); // Temporal
+                }
+                
+                // Inicializar cuando el DOM esté listo
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', toggleGraduacionSection);
+                } else {
+                    toggleGraduacionSection();
+                }
+            }
+            
+            // Iniciar el sistema
+            initGraduacionSystem();
+        </script>
+    </template>
+
+    <!-- Integración con template de producto -->
+    <template id="product_graduacion" inherit_id="website_sale.product">
+        <xpath expr="//form[@id='add_to_cart']" position="before">
+            <t t-call="graduacion_lentes_contacto"/>
+        </xpath>
+        <xpath expr="//body" position="attributes">
+            <attribute name="t-att-data-product-es-lente-contacto">product.es_lente_contacto</attribute>
+            <attribute name="t-att-data-product-es-torico">product.es_torico</attribute>
+        </xpath>
+    </template>
+
+    <!-- Incluir JavaScript -->
+    <template id="assets_frontend" inherit_id="website.assets_frontend">
+        <xpath expr="." position="inside">
+            <t t-call="graduacion_js"/>
+        </xpath>
+    </template>
+</odoo>
