@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Extender vista de producto -->
+    <record id="view_product_template_form_graduacion" model="ir.ui.view">
+        <field name="name">product.template.form.graduacion</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='general']" position="after">
+                <page string="Configuración Óptica" attrs="{'invisible': [('type', '!=', 'product')]}">
+                    <group string="Lentes de Contacto">
+                        <field name="es_lente_contacto"/>
+                        <field name="es_torico"/>
+                    </group>
+                    
+                    <group string="Especificaciones Técnicas" attrs="{'invisible': [('es_lente_contacto', '=', False)]}">
+                        <field name="curva_base"/>
+                        <field name="diametro"/>
+                    </group>
+                    
+                    <group string="Valores de Graduación Disponibles" attrs="{'invisible': [('es_lente_contacto', '=', False)]}">
+                        <field name="esferas_disponibles" 
+                               placeholder="Ej: -10.00,-9.75,-9.50,...,+10.00"
+                               help="Lista de valores de esfera separados por coma"/>
+                        <field name="cilindros_disponibles"
+                               placeholder="Ej: -4.00,-3.75,...,0.00"
+                               help="Lista de valores de cilindro separados por coma"/>
+                        <field name="ejes_disponibles"
+                               placeholder="Ej: 0,5,10,...,180"
+                               help="Lista de valores de eje separados por coma"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
