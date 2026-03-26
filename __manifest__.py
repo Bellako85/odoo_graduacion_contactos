@@ -3,8 +3,7 @@
     'version': '1.0',
     'summary': 'Añade campos de graduación para lentes de contacto en el ecommerce',
     'category': 'Website/Website',
-    'author': 'Tu Nombre',
-    'website': 'https://www.tusitio.com',
+    'author': 'Christian PeWe',
     'depends': ['website_sale', 'sale'],
     'data': [
         'security/ir.model.access.csv',
